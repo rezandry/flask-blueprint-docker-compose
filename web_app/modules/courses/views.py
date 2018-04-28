@@ -9,7 +9,7 @@ def __init__(self):
 
 
 mod_courses = Blueprint(
-    'api', __name__
+    'course', __name__
 )
 api = Api(mod_courses)
 
@@ -24,4 +24,4 @@ class GetCourse(Resource):
         return jsonify(data)
 
 
-api.add_resource(GetCourse, '/api/courses')
+api.add_resource(GetCourse, '/api/course')
