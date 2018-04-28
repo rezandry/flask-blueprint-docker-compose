@@ -8,10 +8,10 @@ def __init__(self):
     self.model = Courses()
 
 
-mod_courses = Blueprint(
+course = Blueprint(
     'course', __name__
 )
-api = Api(mod_courses)
+api = Api(course)
 
 
 class GetCourse(Resource):
