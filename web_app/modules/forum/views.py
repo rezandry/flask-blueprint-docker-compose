@@ -1,10 +1,10 @@
 from flask import render_template, Blueprint, jsonify
-module_forum = Blueprint(
+forum = Blueprint(
     'module_forum', #name of module
     __name__,
     template_folder='templates' # templates folder
 )
-@module_forum.route('/')
+@forum.route('/')
 def index():
     data = [
         {"id": 1, "title":"Flask vs Golang"},
