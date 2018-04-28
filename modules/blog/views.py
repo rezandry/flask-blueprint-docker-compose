@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint, jsonify
 
 blog = Blueprint(
     'blog', #name of module
@@ -7,4 +7,5 @@ blog = Blueprint(
 )
 @blog.route('/')
 def index():
-    return render_template("blog.html")
+    data = [{'id': 1, 'title': 'Blog title 1'}, {'id': 2, 'title': 'Blog title 2'}]
+    return jsonify(data)
