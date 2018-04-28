@@ -8,3 +8,4 @@ flask-admin
 flask-wtf
 flask-security
 bcrypt
+flask_restful
