@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  web_app:
+    build: .
+    command: >
+      gunicorn -b 0.0.0.0:80
+      --access-logfile -
+      --reload
+      "web_app.app:app"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/web_app'
+    ports:
+      - '8000:80'
+
+  postgres:
+    image: 'postgres:9.5'
+    environment:
+      POSTGRES_USER: 'devuser'
+      POSTGRES_PASSWORD: 'devpassword'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    ports:
+      - '5433:5432'
+
+volumes:
+  postgres:
