@@ -1,4 +1,5 @@
 from flask import Flask
-#from modules.home.views import module_home
+from modules.homepage.views import module_homepage
 app = Flask(__name__)
-#app.register_blueprint(module_home, url_prefix='/home')
+app.register_blueprint(module_homepage, url_prefix='/')
+app.register_blueprint(module_homepage, url_prefix='/home')
