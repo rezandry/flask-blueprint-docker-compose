@@ -1,4 +1,5 @@
 from flask import Flask
-#from modules.home.views import module_home
+from modules.courses.views import mod_courses
+
 app = Flask(__name__)
-#app.register_blueprint(module_home, url_prefix='/home')
+app.register_blueprint(mod_courses, url_prefix='/courses')
