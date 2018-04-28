@@ -1,4 +1,4 @@
 from flask import Flask
-#from modules.home.views import module_home
+from modules.order.views import mod_order
 app = Flask(__name__)
-#app.register_blueprint(module_home, url_prefix='/home')
+app.register_blueprint(mod_order, url_prefix='/order')
