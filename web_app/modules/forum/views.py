@@ -1,5 +1,5 @@
-from web_app.modules.forum.model import Forum,forum_schema,forums_schema
 from flask import Blueprint, jsonify, json
+from web_app.modules.forum.model import Forum,forum_schema,forums_schema
 from flask_restful import Api, Resource
 
 
