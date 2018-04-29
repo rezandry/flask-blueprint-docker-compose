@@ -1,14 +1,19 @@
-from flask import render_template, Blueprint, jsonify
+from flask import Blueprint, jsonify, json
+from web_app.modules.forum.model import Forum,forum_schema,forums_schema
+from flask_restful import Api, Resource
+
+
 forum = Blueprint(
-    'module_forum', #name of module
+    'forum', #name of module
     __name__,
     template_folder='templates' # templates folder
 )
-@forum.route('/')
-def index():
-    data = [
-        {"id": 1, "title":"Flask vs Golang"},
-        {"id": 2, "title":"Best Python framework out there?"},
-        {"id": 3, "title":"What to do using python in machine learning"}
-    ]
-    return jsonify(data)
+api = Api(forum)
+
+class ForumApi(Resource):
+    def get(self):
+        data = Forum.query.all()
+        result = forums_schema.dump(data)
+        return jsonify({'forums': result.data})
+
+api.add_resource(ForumApi,'/forum/')
