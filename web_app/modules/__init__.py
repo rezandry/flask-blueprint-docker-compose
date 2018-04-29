@@ -15,5 +15,5 @@ from web_app.modules.order.views import order
 app.register_blueprint(home, url_prefix='/')
 app.register_blueprint(forum)
 app.register_blueprint(blog, url_prefix='/blog')
-app.register_blueprint(order)
+app.register_blueprint(order, url_prefix='/order')
 app.register_blueprint(course)
