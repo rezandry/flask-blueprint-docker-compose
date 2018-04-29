@@ -3,12 +3,12 @@ from flask_restful import Api, Resource
 
 from web_app.modules.order.model import Order,order_schema,orders_schema
 
-mod_order = Blueprint(
+order = Blueprint(
     'order', #name of module
     __name__,
     template_folder='templates' # templates folder
 )
-api = Api(mod_order)
+api = Api(order)
 
 class OrderApi(Resource):
     def get(self):
