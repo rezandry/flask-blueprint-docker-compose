@@ -15,8 +15,17 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
-
+import os,sys
+sys.path.append(os.getcwd())
+# import web_app.modules.blog.models as blog
+# import web_app.modules.courses.models as courses
+# import web_app.modules.forum.models as forum
+# import web_app.modules.homepage.models as homepage
+import web_app.modules.order.model as models
+target_metadata = models.db.Model.metadata
+# import web_app.modules.db.Model as order
+# target_metadata = [blog.metadata,courses.metadata,forum.metadata,homepage.metadata,order.metadata]
+# target_metadata = [order.metadata]
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
