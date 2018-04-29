@@ -3,11 +3,10 @@ from marshmallow import Schema, fields, ValidationError, pre_load
 from web_app.modules import db
 
 
-
 class Order(db.Model):
     __tablename__ = 'order'
-    id = Column(Integer, primary_key=True)
-    title = Column(String)
+    id = db.Column(Integer, primary_key=True)
+    title = db.Column(String)
 
 
 class OrderSchema(Schema):
