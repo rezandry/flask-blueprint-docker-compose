@@ -13,10 +13,7 @@ class Order(db.Model):
 class OrderSchema(Schema):
     id = fields.Int(dump_only=True)
     title = fields.Str()
-    # formatted_name = fields.Method("format_name", dump_only=True)
 
-    # def format_name(self, order):
-    #     return "{}, {}".format(order.id, order.title)
 
 order_schema = OrderSchema()
 orders_schema = OrderSchema(many=True)

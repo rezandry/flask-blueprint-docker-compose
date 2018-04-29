@@ -4,7 +4,7 @@ from flask_restful import Api, Resource
 from web_app.modules.order.model import Order,order_schema,orders_schema
 
 mod_order = Blueprint(
-    'mod_order', #name of module
+    'order', #name of module
     __name__,
     template_folder='templates' # templates folder
 )
@@ -16,4 +16,4 @@ class OrderApi(Resource):
         result = orders_schema.dump(data)
         return jsonify({'orders': result.data})
 
-api.add_resource(OrderApi,'/order/<int:id>', '/order/')
+api.add_resource(OrderApi,'/order/')
