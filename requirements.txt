@@ -10,3 +10,4 @@ flask-security
 bcrypt
 flask-restful
 marshmallow
+requests

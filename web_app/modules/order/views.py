@@ -1,3 +1,4 @@
+import requests
 from flask import Blueprint, jsonify, json
 from flask_restful import Api, Resource
 
@@ -16,4 +17,11 @@ class OrderApi(Resource):
         result = orders_schema.dump(data)
         return jsonify({'orders': result.data})
 
-api.add_resource(OrderApi,'/order/')
+api.add_resource(OrderApi,'/api')
+
+@order.route('/')
+def index():
+    result = {}
+    # result = requests.get('http://localhost:8000/order/api')
+    # return r.json()
+    return result
