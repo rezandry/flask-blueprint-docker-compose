@@ -1,0 +1,13 @@
+flask
+gunicorn
+psycopg2
+psycopg2-binary
+flask-sqlalchemy
+alembic
+flask-admin
+flask-wtf
+flask-security
+bcrypt
+flask-restful
+marshmallow
+requests

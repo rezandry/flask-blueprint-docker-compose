@@ -1,18 +1,18 @@
 from sqlalchemy import Column, Integer, String
 from marshmallow import Schema, fields, ValidationError, pre_load
-from web_app.modules import db
+from order.modules import db
 
 
-class Course(db.Model):
-    __tablename__ = 'course'
+class Order(db.Model):
+    __tablename__ = 'order'
     id = db.Column(Integer, primary_key=True)
     title = db.Column(String)
 
 
-class CourseSchema(Schema):
+class OrderSchema(Schema):
     id = fields.Int(dump_only=True)
     title = fields.Str()
 
 
-course_schema = CourseSchema()
-courses_schema = CourseSchema(many=True)
+order_schema = OrderSchema()
+orders_schema = OrderSchema(many=True)

@@ -17,7 +17,7 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 import os,sys
 sys.path.append(os.getcwd())
-from web_app.modules import db
+from course.modules import db
 target_metadata = db.Model.metadata
 
 # other values from the config, defined by the needs of env.py,
